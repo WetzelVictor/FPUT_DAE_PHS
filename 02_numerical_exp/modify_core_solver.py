@@ -47,7 +47,7 @@ def insert_solver(folder_path_in, N_tube):
                              Lower|Upper,
                              DiagonalPreconditioner<double>
                             > solver;
-        '''.format(N_tube)
+        '''.format(N_lambda)
 
     # Includes à entrer au début du fichier
     str_includes = '''
@@ -73,8 +73,8 @@ def insert_solver(folder_path_in, N_tube):
     str_A_update = '''void FPUT::A_update(){
         // Update method for matrice A (AKA matrix Q22 in doc 28)\n'''
 
-    for i in range(1,N_lambda+1):
-        str_A_update += f"\t\tA.coeffRef({i},{i}) = 1./(*m_R{i}) + 1./(*m_L{i+1});\n"
+    for i in range(N_lambda):
+        str_A_update += f"\t\tA.coeffRef({i},{i}) = 1./(*m_R{i+1}) + 1./(*m_L{i+2});\n"
     str_A_update += "}\n"
 
     # void FPUT::A_init()
@@ -84,8 +84,8 @@ def insert_solver(folder_path_in, N_tube):
         A.reserve({0}); // allocating memory for sparse mat
     '''.format(N_lambda)
 
-    for i in range(1, N_lambda+1):
-        str_A_init += f"\t\tA.insert({i},{i}) = 1./(*m_R{i}) + 1./(*m_L{i+1});\n"
+    for i in range(N_lambda):
+        str_A_init += f"\t\tA.insert({i},{i}) = 1./(*m_R{i+1}) + 1./(*m_L{i+2});\n"
     str_A_init += "}\n"
 
     # void FPUT::RHS_update()

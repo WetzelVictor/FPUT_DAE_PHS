@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/FPUT.dir/src/core.cpp.o CMakeFiles/FPUT.dir/src/parameters.cpp.o CMakeFiles/FPUT.dir/src/simu.cpp.o  -o ../bin/FPUT  -lhdf5_cpp -lhdf5 -lsz -lz -ldl -lm 

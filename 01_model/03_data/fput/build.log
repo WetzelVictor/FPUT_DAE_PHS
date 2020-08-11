@@ -1,0 +1,18 @@
+-- The CXX compiler identification is GNU 10.1.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- HDF5: Using hdf5 compiler wrapper to determine CXX configuration
+-- Found HDF5: /usr/lib/libhdf5_cpp.so;/usr/lib/libhdf5.so;/usr/lib/libsz.so;/usr/lib/libz.so;/usr/lib/libdl.so;/usr/lib/libm.so (found version "1.12.0") found components: HL CXX 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/victorw/ownCloud/IRCAM/03_DOCS/38_FPUT_problem_DAE/02_python/01_model/03_data/fput/build
+Scanning dependencies of target FPUT
+[ 25%] Building CXX object CMakeFiles/FPUT.dir/src/core.cpp.o
+[ 50%] Building CXX object CMakeFiles/FPUT.dir/src/parameters.cpp.o
+[ 75%] Building CXX object CMakeFiles/FPUT.dir/src/simu.cpp.o
+[100%] Linking CXX executable ../bin/FPUT
+[100%] Built target FPUT
